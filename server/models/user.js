@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 const crypto = require('crypto');
 
-
-
 const userSchema = mongoose.Schema({
   name: {
     type: String,
@@ -36,7 +34,7 @@ const userSchema = mongoose.Schema({
     default: "subscriber"
   }
 
-})
+}, { timestamps: true})
 
 
 
