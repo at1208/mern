@@ -8,6 +8,7 @@ const app = express();
 
 //import routes
 const authRoute = require('./routes/auth');
+const userRoutes = require('./routes/user');
 
 //app middlewares
 app.use(cors());
@@ -18,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true}))
 
 //routes middleware
 app.use('/api', authRoute);
-
+app.use('/api', userRoutes);
 
 mongoose.connect(process.env.DATABASE, {  useNewUrlParser: true, useUnifiedTopology: true })
    .then(
